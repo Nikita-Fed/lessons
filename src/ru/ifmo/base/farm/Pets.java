@@ -17,6 +17,14 @@ public class Pets {
             health++;
     }
 
+    public void beAttacked (Pets pet, WildAnimal wild) {
+        if (! canRunaway(pet, wild)) {
+            pet.health -= wild.getPower();
+            if (pet.health <= 0) pet.onFarm = false;
+        }
+
+    }
+
     public String getName() {
         return name;
     }
