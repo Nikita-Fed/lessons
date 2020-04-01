@@ -3,7 +3,7 @@ package ru.ifmo.base.farm;
 public class Farm {
 
     public Farm() {}
-    public Pets[] pets = new Pets[4];
+    protected Pets[] pets = new Pets[4];
 
     public void addPet (Pets pet) {
         for (int i = 0; i < pets.length; i++) {
@@ -11,7 +11,7 @@ public class Farm {
         }
     }
 
-    private WildAnimal[] wildAnimals = new WildAnimal[3];
+    protected WildAnimal[] wildAnimals = new WildAnimal[3];
 
     public void addWild (WildAnimal wild) {
         for (int i = 0; i < wildAnimals.length; i++) {

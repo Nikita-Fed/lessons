@@ -72,4 +72,8 @@ public class Pets {
     public void setOnFarm(boolean onFarm) {
         this.onFarm = onFarm;
     }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
 }

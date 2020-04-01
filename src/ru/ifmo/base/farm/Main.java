@@ -1,8 +1,20 @@
 package ru.ifmo.base.farm;
 
+import java.util.Random;
+
 public class Main {
 
     public void passDay() {
+        Farmer farmer = new Farmer();
+        farmer.resources-= 2;
+        Farm farm = new Farm();
+        int wildNum = (int) Math.random()*3;
+        int petNum = (int) Math.random()*4;
+        Random random1 = new Random();
+        if(random1.nextBoolean()) { //Рандомно решаем будет ли Дикое животное атаковать. Если не будет (false), то считаем что это Фермер прогнал
+        farm.wildAnimals[wildNum].toAttack(farm.pets[petNum], farm.wildAnimals[wildNum]); }
+        farmer.feedPets();
+        farmer.getRes();
 
     }
 
@@ -37,6 +49,7 @@ public class Main {
         rabbit.setResSize(0);
 
         Farm farm = new Farm();
+        Farmer farmer = new Farmer();
 
         farm.addPet(cow);
         farm.addPet(cat);

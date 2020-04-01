@@ -6,12 +6,29 @@ int resources = 5;
 
     Farm farm = new Farm();
 
-    public void getRes() {
+    public void getRes() { //Собирать ресурсы
+        int countEatable = 0;
         for (Pets pet: farm.pets) {
-            if (pet instanceof GiveRes)
+            if (pet instanceof GiveRes) {
                 resources += pet.getResSize();
+                countEatable++;
+            }
         }
-
-
+        if (countEatable == 0) {
+            for (Pets pet: farm.pets) {
+                if (pet instanceof Eatable) {
+                    resources += pet.getWeight();
+                    pet.setOnFarm(false);
+                }
+            }
+        }
     }
+
+    public void feedPets() {
+        for (Pets pet: farm.pets) {
+            if (pet.isOnFarm() && pet.getHealth()!= pet.getMaxHealth()) pet.setHealth(pet.getHealth()+1);
+        }
+    }
+
+
 }
