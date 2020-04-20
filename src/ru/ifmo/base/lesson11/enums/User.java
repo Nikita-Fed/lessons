@@ -33,4 +33,12 @@ public class User {
 
     Position position;
 
+    @Override //это добавил в последний момент так как не работает вывод массива...
+    public String toString() {
+        return "User{" +
+                "fullName='" + fullName + '\'' +
+                ", salary=" + salary +
+                ", position=" + position +
+                '}';
+    }
 }
